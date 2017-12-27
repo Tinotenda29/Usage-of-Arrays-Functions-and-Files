@@ -1,0 +1,48 @@
+#include <stdio.h>
+02
+ 
+03
+int main (void)
+04
+{
+05
+    char testkey[10];
+06
+    int studentid[50];
+07
+    int numright[50];
+08
+    FILE *fp1;
+09
+    int i;
+10
+    for(i=0;i<10;i++)
+11
+    testkey[i] = 0;
+12
+    i=0;
+13
+    if ((fp1=fopen("test.txt","r"))==NULL)
+14
+    {
+15
+    printf("test.txt failed to open\n");
+16
+    return 1;
+17
+    }
+18
+    else
+19
+       while((fscanf(fp1,"%c",&testkey[i]))!=EOF)
+20
+        {
+21
+            fscanf(fp1,"%d",&studentid[i]);
+22
+            printf("testkey[%d] is %c\n",i,testkey[i]); 
+23
+            i++;
+24
+        }
+25
